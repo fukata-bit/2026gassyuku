@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鈴谷ミニ合宿 保護者向けしおり(WEB版)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#5bc8e8;
+    --sky-dark:#1f96c4;
+    --lime:#a8d64a;
+    --lime-dark:#7ba82c;
+    --cream:#f5fbfc;
+    --ink:#33403f;
+    --sub:#7c8a83;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; font-family:"M PLUS Rounded 1c","Yusei Magic",sans-serif;
+    color:var(--ink); background:var(--cream);
+  }
+  header.hero{
+    background:linear-gradient(160deg,var(--sky) 0%,var(--sky-dark) 75%);
+    color:white; padding:34px 20px 28px; text-align:center;
+  }
+  header.hero .ball{ font-size:40px; }
+  header.hero h1{ font-family:"Yusei Magic",sans-serif; font-size:24px; margin:6px 0 4px; }
+  header.hero .sub{ font-size:13px; opacity:0.95; }
+  header.hero .badge{
+    display:inline-block; margin-top:12px; background:rgba(255,255,255,0.25);
+    padding:5px 16px; border-radius:20px; font-size:13px;
+  }
+
+  nav.jump{
+    display:flex; flex-wrap:wrap; gap:6px; justify-content:center;
+    padding:14px 12px; background:white; position:sticky; top:0; z-index:10;
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  nav.jump a{
+    font-size:11.5px; text-decoration:none; color:var(--sky-dark);
+    background:#eaf7fb; padding:6px 10px; border-radius:14px; white-space:nowrap;
+  }
+
+  main{ max-width:640px; margin:0 auto; padding:18px 16px 60px; }
+
+  section{ margin-bottom:26px; scroll-margin-top:60px; }
+  .section-title{
+    display:flex; align-items:center; gap:8px;
+    color:var(--sky-dark); border-bottom:3px solid var(--sky);
+    padding-bottom:6px; margin-bottom:12px;
+  }
+  .section-title span.icon{ font-size:20px; }
+  .section-title h2{ margin:0; font-size:16px; font-family:"Yusei Magic",sans-serif; }
+
+  .card{
+    background:white; border-radius:14px; padding:14px 16px; margin-bottom:10px;
+    box-shadow:0 2px 0 #d8ecd0; font-size:13px; line-height:1.75;
+  }
+  .card b{ color:var(--sky-dark); }
+  .card a.maplink{
+    display:inline-flex; align-items:center; gap:4px; margin-top:6px;
+    font-size:12px; color:white; background:var(--sky-dark);
+    padding:5px 12px; border-radius:16px; text-decoration:none;
+  }
+  .addr-name{ font-weight:700; font-size:14px; margin-bottom:2px; }
+  .addr-sub{ font-size:11.5px; color:var(--sub); margin-bottom:4px; }
+
+  .day-badge{
+    display:inline-block; background:var(--lime-dark); color:white; font-size:12.5px;
+    padding:4px 14px; border-radius:20px; margin-bottom:10px;
+  }
+  .timeline{ position:relative; padding-left:16px; }
+  .timeline::before{
+    content:""; position:absolute; left:4px; top:2px; bottom:2px; width:3px;
+    background:var(--sky); opacity:0.5; border-radius:2px;
+  }
+  .t-item{ position:relative; margin-bottom:8px; font-size:12.5px; }
+  .t-item::before{
+    content:""; position:absolute; left:-16px; top:3px; width:9px; height:9px;
+    background:var(--sky-dark); border-radius:50%;
+  }
+  .t-time{ font-weight:700; color:var(--sky-dark); }
+  .t-note{ font-size:10.5px; color:var(--sub); }
+
+  .checklist{ list-style:none; margin:0; padding:0; }
+  .checklist li{
+    padding:5px 0; border-bottom:1px dashed #d9ecd3; font-size:12.5px;
+    display:flex; gap:6px; align-items:flex-start;
+  }
+  .checklist li::before{ content:"☐"; color:var(--lime-dark); }
+  .tag{
+    display:inline-block; font-size:9.5px; background:#6fbf73; color:white;
+    padding:1px 7px; border-radius:8px; margin-left:4px;
+  }
+  .tag.warn{ background:#e0725a; }
+
+  table{ width:100%; border-collapse:collapse; font-size:12px; }
+  th{ background:var(--sky); color:white; padding:5px 8px; text-align:left; }
+  td{ padding:4px 8px; border-bottom:1px solid #e3f0f0; }
+  tr.fam-total td{ font-weight:700; color:var(--sky-dark); border-bottom:2px solid var(--sky); }
+  tr.grand td{ font-weight:900; color:white; background:var(--lime-dark); padding:7px 8px; }
+
+  .callout{
+    background:#eaf7fb; border:2px dashed var(--sky); border-radius:12px;
+    padding:12px 14px; font-size:12.5px; line-height:1.7; margin-top:8px;
+  }
+  .callout.warn{ background:#fdeee9; border-color:#e0725a; }
+  .callout .ttl{ font-weight:700; color:var(--sky-dark); margin-bottom:4px; }
+  .callout.warn .ttl{ color:#c14a2f; }
+
+  footer{
+    text-align:center; font-size:11px; color:var(--sub); padding:20px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="ball">🏀</div>
+  <h1>鈴谷ミニ合宿 しおり<br>（保護者向け・WEB版）</h1>
+  <div class="sub">鈴谷ミニバスケットボールチーム</div>
+  <div class="badge">7月25日(土)〜26日(日)　1泊2日</div>
+</header>
+
+<nav class="jump">
+  <a href="#basic">概要</a>
+  <a href="#place">行き先</a>
+  <a href="#day1">1日目</a>
+  <a href="#day2">2日目</a>
+  <a href="#items">もちもの</a>
+  <a href="#cost">費用</a>
+  <a href="#pay">お昼代</a>
+  <a href="#car">配車</a>
+  <a href="#safety">安全・アレルギー</a>
+  <a href="#staff">引率者</a>
+</nav>
+
+<main>
+
+<section id="basic">
+  <div class="section-title"><span class="icon">📖</span><h2>合宿の目的</h2></div>
+  <div class="card">
+    ・バスケットの基礎力と体力向上<br>
+    ・チームワークの強化<br>
+    ・プレイ面だけではなく集団生活の中で自主性を育てる
+  </div>
+  <div class="card">
+    <b>集合：</b>7月25日(土) 6:50　鈴谷小学校 体育館前<br>
+    <b>解散：</b>7月26日(日) 16:00頃　鈴谷小学校<br>
+    <span style="font-size:11.5px;color:var(--sub);">※詳しい時間はLINEでも確認してください</span>
+  </div>
+</section>
+
+<section id="place">
+  <div class="section-title"><span class="icon">📍</span><h2>行き先・住所</h2></div>
+
+  <div class="card">
+    <div class="addr-name">🏨 宿泊先：ホテルひこうきぐも</div>
+    <div class="addr-sub">〒302-0107　茨城県守谷市大木670</div>
+    TEL：0297-48-4343
+    <br><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E5%AE%88%E8%B0%B7%E5%B8%82%E5%A4%A7%E6%9C%A8670" target="_blank" rel="noopener">🗺️ 地図で見る</a>
+  </div>
+
+  <div class="card">
+    <div class="addr-name">🏟️ 練習場所：石下総合体育館</div>
+    <div class="addr-sub">茨城県常総市鴻野山1670</div>
+    ※宿泊先と練習場所は車で約30分離れています／エアコン完備
+    <br><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E5%B8%B8%E7%B7%8F%E5%B8%82%E9%B4%BB%E9%87%8E%E5%B1%B11670" target="_blank" rel="noopener">🗺️ 地図で見る</a>
+  </div>
+
+  <div class="card">
+    <div class="addr-name">🍽️ 2日目お昼：旬彩料理 日本橋</div>
+    <div class="addr-sub">茨城県常総市大沢1942-23</div>
+    <br><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=%E8%8C%A8%E5%9F%8E%E7%9C%8C%E5%B8%B8%E7%B7%8F%E5%B8%82%E5%A4%A7%E6%B2%A21942-23" target="_blank" rel="noopener">🗺️ 地図で見る</a>
+  </div>
+</section>
+
+<section id="day1">
+  <div class="section-title"><span class="icon">🗓️</span><h2>1日目のスケジュール（7/25 土）</h2></div>
+  <div class="card">
+    <div class="timeline">
+      <div class="t-item"><span class="t-time">7:00</span> 鈴谷小学校 出発（浦和IC東北道⇒久喜白岡JCT⇒圏央道⇒坂東IC／所要約1時間30分）</div>
+      <div class="t-item"><span class="t-time">9:00</span> 石下総合運動公園体育館 到着・準備</div>
+      <div class="t-item"><span class="t-time">9:00-12:00</span> 午前練習</div>
+      <div class="t-item"><span class="t-time">12:00-13:00</span> 昼食（お弁当配達）</div>
+      <div class="t-item"><span class="t-time">13:00-16:00</span> 午後練習、片付け・移動準備</div>
+      <div class="t-item"><span class="t-time">16:30</span> 体育館 出発 → ホテルへ（所要約30分）</div>
+      <div class="t-item"><span class="t-time">17:00</span> ホテル 到着・チェックイン</div>
+      <div class="t-item"><span class="t-time">17:30-18:30</span> 夕食</div>
+      <div class="t-item"><span class="t-time">18:30-19:30</span> 入浴 <span class="t-note">（男性保護者付添お願いします）</span></div>
+      <div class="t-item"><span class="t-time">19:40-20:20</span> 団欒タイム <span class="t-note">（花火は今回中止となりました）</span></div>
+      <div class="t-item"><span class="t-time">20:20-21:00</span> ミーティング（1日の振り返り）</div>
+      <div class="t-item"><span class="t-time">21:00</span> 自由時間・就寝</div>
+    </div>
+  </div>
+</section>
+
+<section id="day2">
+  <div class="section-title"><span class="icon">🗓️</span><h2>2日目のスケジュール（7/26 日）</h2></div>
+  <div class="card">
+    <div class="timeline">
+      <div class="t-item"><span class="t-time">6:00</span> 起床、シーツ等をまとめる、着替え、帰る準備</div>
+      <div class="t-item"><span class="t-time">7:00-8:00</span> 朝食</div>
+      <div class="t-item"><span class="t-time">8:30</span> ホテル 出発 → 体育館へ（所要約30分）</div>
+      <div class="t-item"><span class="t-time">9:00-12:00</span> 午前練習</div>
+      <div class="t-item"><span class="t-time">12:20-14:30</span> 昼食（旬彩料理 日本橋）</div>
+      <div class="t-item"><span class="t-time">14:30〜</span> 常総市地域交流センター（お城）に立ち寄る予定あり <span class="t-note">集合写真撮影予定</span></div>
+      <div class="t-item"><span class="t-time">〜14:30</span> 現地 出発 → 鈴谷小学校へ（所要約1時間30分）</div>
+      <div class="t-item"><span class="t-time">16:00-17:00</span> 鈴谷小学校 到着・解散</div>
+    </div>
+  </div>
+</section>
+
+<section id="items">
+  <div class="section-title"><span class="icon">🎒</span><h2>持ち物</h2></div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">リュックに入れるもの</div>
+    <ul class="checklist">
+      <li>1日目朝ごはん・補食（必要な人）</li>
+      <li>ボール、シューズ、ビブス</li>
+      <li>着替え1セット<span class="tag">名前記載</span></li>
+      <li>汗拭きタオル</li>
+      <li>氷たっぷりの水筒</li>
+      <li>アイシング・熱中症対策グッズ</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">大きな荷物（宿まで車にのせておく）</div>
+    <ul class="checklist">
+      <li>パジャマ（必要な人）</li>
+      <li>洗面セット（歯磨き）</li>
+      <li>お風呂セット（バスタオル・浴用タオル等）</li>
+      <li>洗濯ネット<span class="tag">名前記載</span></li>
+      <li>館内ばき（スリッパ等）<span class="tag">各部屋に用意あり／小さい子は持参推奨</span></li>
+      <li>着替え 多めに<span class="tag">目安：午後／移動／お風呂後／寝る／2日目午後＋予備</span></li>
+      <li>Tシャツは最低6〜7枚</li>
+      <li>常備薬</li>
+      <li>帽子</li>
+      <li>保険証（マイナ保険証）<span class="tag">不安な場合は封筒に入れて同行保護者へ</span></li>
+      <li>2日目お昼代（選んだメニューの金額ぴったり）<span class="tag warn">ジップロック・名前記載必須</span></li>
+    </ul>
+    <div class="callout warn">
+      <div class="ttl">🎮 ゲームは禁止です</div>
+      すべての持ち物に名前の記載をお願いします。
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">体育館から持っていくもの（大人が用意）</div>
+    <ul class="checklist">
+      <li>クーラーボックス×2、飲み物</li>
+      <li>ボールケース</li>
+      <li>赤いバッグ</li>
+      <li>ブルーシート</li>
+    </ul>
+  </div>
+</section>
+
+<section id="cost">
+  <div class="section-title"><span class="icon">💴</span><h2>費用</h2></div>
+  <div class="card">
+    <b>お子さん1人あたりの旅費（概算）：</b>11,400〜13,020円<br>
+    別途2日目昼食代として、上記お昼代表の金額をジップロック（名前記載）でお持たせください。<br>
+    <span style="font-size:11.5px;color:var(--sub);">※配車状況・欠席等の変更があると内訳の金額が変わる場合があります</span>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">チーム購入予定（15,000円以内）</div>
+    ・飲み物　・氷　・スポンジ（水筒洗う用）
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:6px;">旅費（ご家庭ごとの内訳）</div>
+    <table>
+      <tr><th>お名前</th><th>金額</th></tr>
+      <tr><td>さなえ</td><td>9,900円</td></tr>
+      <tr><td>あさひ</td><td>11,200円</td></tr>
+      <tr><td>はるひ</td><td>11,200円</td></tr>
+      <tr class="fam-total"><td>なみのうえさん 合計</td><td>32,300円</td></tr>
+      <tr><td>ゆう</td><td>9,900円</td></tr>
+      <tr><td>さね</td><td>11,200円</td></tr>
+      <tr class="fam-total"><td>ふかたさん 合計</td><td>21,100円</td></tr>
+      <tr><td>きょうこ</td><td>11,600円</td></tr>
+      <tr><td>あおば</td><td>12,900円</td></tr>
+      <tr class="fam-total"><td>いのうえさん 合計</td><td>24,500円</td></tr>
+      <tr><td>ちち</td><td>9,900円</td></tr>
+      <tr><td>そうま</td><td>11,200円</td></tr>
+      <tr class="fam-total"><td>えぞえさん 合計</td><td>21,100円</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:6px;">旅費（単独の方）</div>
+    <table>
+      <tr><th>お名前</th><th>金額</th></tr>
+      <tr><td>だいや</td><td>12,900円</td></tr>
+      <tr><td>けいご</td><td>11,200円</td></tr>
+      <tr><td>ようた</td><td>12,900円</td></tr>
+      <tr><td>こうのすけ</td><td>12,900円</td></tr>
+      <tr><td>はるた</td><td>12,900円</td></tr>
+      <tr><td>げんと</td><td>12,900円</td></tr>
+      <tr><td>いぶき</td><td>12,900円</td></tr>
+      <tr><td>ひゅうが</td><td>12,900円</td></tr>
+      <tr><td>ゆづき</td><td>11,100円</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:6px;">キャンセル料金表（お1人あたり）</div>
+    <table>
+      <tr><th>不泊</th><th>当日</th><th>前日</th><th>3日前</th><th>7日前</th></tr>
+      <tr><td>100%</td><td>100%</td><td>80%</td><td>70%</td><td>60%</td></tr>
+    </table>
+    <table style="margin-top:6px;">
+      <tr><th>14日前</th><th>30日前</th><th>60日前</th><th>予約時</th></tr>
+      <tr><td>50%</td><td>40%</td><td>30%</td><td>20%</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="pay">
+  <div class="section-title"><span class="icon">🧾</span><h2>2日目お昼代・集金金額</h2></div>
+  <div class="card">
+    <div style="font-size:11.5px;color:var(--sub);margin-bottom:8px;">
+      1️⃣ひれかつランチ 1,210円　2️⃣唐揚げランチ 1,210円　3️⃣すしランチ 1,375円
+    </div>
+    <table>
+      <tr><th>お名前</th><th>金額</th></tr>
+      <tr><td>さなえ（おとな）</td><td>1,375円</td></tr>
+      <tr><td>あさひ（こども）</td><td>1,210円</td></tr>
+      <tr><td>はるひ（こども）</td><td>1,375円</td></tr>
+      <tr class="fam-total"><td>なみのうえさん 合計</td><td>3,960円</td></tr>
+      <tr><td>めぐみ（おとな）</td><td>1,375円</td></tr>
+      <tr><td>けいご（こども）</td><td>1,210円</td></tr>
+      <tr class="fam-total"><td>よどのさん 合計</td><td>2,585円</td></tr>
+      <tr><td>ゆう（おとな）</td><td>1,210円</td></tr>
+      <tr><td>さねおみ（こども）</td><td>1,210円</td></tr>
+      <tr class="fam-total"><td>ふかたさん 合計</td><td>2,420円</td></tr>
+      <tr><td>きょうこ（おとな）</td><td>1,375円</td></tr>
+      <tr><td>あおば（こども）</td><td>1,210円</td></tr>
+      <tr class="fam-total"><td>いのうえさん 合計</td><td>2,585円</td></tr>
+      <tr><td>ちち（おとな）</td><td>1,210円</td></tr>
+      <tr><td>そうま（こども）</td><td>1,375円</td></tr>
+      <tr class="fam-total"><td>えぞえさん 合計</td><td>2,585円</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <div style="font-weight:700;color:var(--sky-dark);margin-bottom:6px;">単独の方</div>
+    <table>
+      <tr><th>お名前</th><th>金額</th></tr>
+      <tr><td>監督（おとな）</td><td>1,320円</td></tr>
+      <tr><td>だいや</td><td>1,210円</td></tr>
+      <tr><td>ようた</td><td>1,210円</td></tr>
+      <tr><td>こうちゃん</td><td>1,375円</td></tr>
+      <tr><td>はるた</td><td>1,210円</td></tr>
+      <tr><td>げんと</td><td>1,210円</td></tr>
+      <tr><td>いぶき</td><td>1,210円</td></tr>
+      <tr><td>ひゅうが</td><td>1,375円</td></tr>
+      <tr><td>ゆづき</td><td>1,210円</td></tr>
+      <tr class="grand"><td>全体合計</td><td>24,145円</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="car">
+  <div class="section-title"><span class="icon">🚗</span><h2>配車</h2></div>
+  <div class="card">
+    <b>淀野号：</b>けーご・だいや・ようた・あおば・井上母<br>
+    <b>浪上号：</b>あさひ・はるひ（直行直帰）<br>
+    <b>深田号：</b>さね・げんと・はるた・監督<br>
+    <b>江副号：</b>そうま・こうのすけ・ひゅうが・いぶ・ゆづ
+  </div>
+</section>
+
+<section id="safety">
+  <div class="section-title"><span class="icon">🩺</span><h2>安全・アレルギー対応</h2></div>
+  <div class="card">
+    <b>体調不良時：</b>現地までお迎えに来ていただくことになります。
+  </div>
+  <div class="card">
+    <b>食物アレルギー：</b>現地での対応ができないため、別途持たせていただくか、事前にご相談ください（現地調達等も検討します）。
+  </div>
+</section>
+
+<section id="staff">
+  <div class="section-title"><span class="icon">🧑‍🏫</span><h2>引率指導者・保護者</h2></div>
+  <div class="card">
+    <b>指導者：</b>監督、淀野コーチ<br>
+    <b>引率保護者：</b>浪上さん、深田さん、井上さん、江副さん
+  </div>
+</section>
+
+</main>
+
+<footer>鈴谷ミニバスケットボールチーム　ご不明点はLINEまたはコーチまで</footer>
+
+</body>
+</html>
