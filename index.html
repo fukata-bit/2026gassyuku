@@ -87,10 +87,18 @@
 
   .checklist{ list-style:none; margin:0; padding:0; }
   .checklist li{
-    padding:5px 0; border-bottom:1px dashed #d9ecd3; font-size:12.5px;
-    display:flex; gap:6px; align-items:flex-start;
+    padding:2px 0; border-bottom:1px dashed #d9ecd3; font-size:12.5px;
   }
-  .checklist li::before{ content:"☐"; color:var(--lime-dark); }
+  .checklist label{
+    display:flex; gap:8px; align-items:flex-start; padding:6px 2px;
+    cursor:pointer; width:100%;
+  }
+  .checklist input[type=checkbox]{
+    flex:none; width:18px; height:18px; margin-top:1px;
+    accent-color:var(--lime-dark); cursor:pointer;
+  }
+  .checklist li.checked label{ color:#a9b3ad; text-decoration:line-through; }
+  .checklist li.checked .tag{ opacity:0.5; }
   .tag{
     display:inline-block; font-size:9.5px; background:#6fbf73; color:white;
     padding:1px 7px; border-radius:8px; margin-left:4px;
@@ -219,29 +227,29 @@
   <div class="card">
     <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">リュックに入れるもの</div>
     <ul class="checklist">
-      <li>1日目朝ごはん・補食（必要な人）</li>
-      <li>ボール、シューズ、ビブス</li>
-      <li>着替え1セット<span class="tag">名前記載</span></li>
-      <li>汗拭きタオル</li>
-      <li>氷たっぷりの水筒</li>
-      <li>アイシング・熱中症対策グッズ</li>
+      <li><label><input type="checkbox" class="chk" data-key="item1"><span>1日目朝ごはん・補食（必要な人）</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item2"><span>ボール、シューズ、ビブス</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item3"><span>着替え1セット<span class="tag">名前記載</span></span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item4"><span>汗拭きタオル</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item5"><span>氷たっぷりの水筒</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item6"><span>アイシング・熱中症対策グッズ</span></label></li>
     </ul>
   </div>
 
   <div class="card">
     <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">大きな荷物（宿まで車にのせておく）</div>
     <ul class="checklist">
-      <li>パジャマ（必要な人）</li>
-      <li>洗面セット（歯磨き）</li>
-      <li>お風呂セット（バスタオル・浴用タオル等）</li>
-      <li>洗濯ネット<span class="tag">名前記載</span></li>
-      <li>館内ばき（スリッパ等）<span class="tag">各部屋に用意あり／小さい子は持参推奨</span></li>
-      <li>着替え 多めに<span class="tag">目安：午後／移動／お風呂後／寝る／2日目午後＋予備</span></li>
-      <li>Tシャツは最低6〜7枚</li>
-      <li>常備薬</li>
-      <li>帽子</li>
-      <li>保険証（マイナ保険証）<span class="tag">不安な場合は封筒に入れて同行保護者へ</span></li>
-      <li>2日目お昼代（選んだメニューの金額ぴったり）<span class="tag warn">ジップロック・名前記載必須</span></li>
+      <li><label><input type="checkbox" class="chk" data-key="item7"><span>パジャマ（必要な人）</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item8"><span>洗面セット（歯磨き）</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item9"><span>お風呂セット（バスタオル・浴用タオル等）</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item10"><span>洗濯ネット<span class="tag">名前記載</span></span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item11"><span>館内ばき（スリッパ等）<span class="tag">各部屋に用意あり／小さい子は持参推奨</span></span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item12"><span>着替え 多めに<span class="tag">目安：午後／移動／お風呂後／寝る／2日目午後＋予備</span></span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item13"><span>Tシャツは最低6〜7枚</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item14"><span>常備薬</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item15"><span>帽子</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item16"><span>保険証（マイナ保険証）<span class="tag">不安な場合は封筒に入れて同行保護者へ</span></span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item17"><span>2日目お昼代（選んだメニューの金額ぴったり）<span class="tag warn">ジップロック・名前記載必須</span></span></label></li>
     </ul>
     <div class="callout warn">
       <div class="ttl">🎮 ゲームは禁止です</div>
@@ -252,10 +260,10 @@
   <div class="card">
     <div style="font-weight:700;color:var(--sky-dark);margin-bottom:4px;">体育館から持っていくもの（大人が用意）</div>
     <ul class="checklist">
-      <li>クーラーボックス×2、飲み物</li>
-      <li>ボールケース</li>
-      <li>赤いバッグ</li>
-      <li>ブルーシート</li>
+      <li><label><input type="checkbox" class="chk" data-key="item18"><span>クーラーボックス×2、飲み物</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item19"><span>ボールケース</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item20"><span>赤いバッグ</span></label></li>
+      <li><label><input type="checkbox" class="chk" data-key="item21"><span>ブルーシート</span></label></li>
     </ul>
   </div>
 </section>
@@ -392,6 +400,19 @@
 
 <footer>鈴谷ミニバスケットボールチーム　ご不明点はLINEまたはコーチまで</footer>
 
+
+<script>
+  const STORAGE_PREFIX = 'suzuya-shiori-';
+  document.querySelectorAll('.chk').forEach(cb => {
+    const key = STORAGE_PREFIX + cb.dataset.key;
+    const saved = localStorage.getItem(key) === '1';
+    cb.checked = saved;
+    if (saved) cb.closest('li').classList.add('checked');
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked ? '1' : '0');
+      cb.closest('li').classList.toggle('checked', cb.checked);
+    });
+  });
+</script>
 </body>
 </html>
-
